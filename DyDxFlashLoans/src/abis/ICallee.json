@@ -1,0 +1,481 @@
+{
+  "contractName": "ICallee",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "number",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Account.Info",
+          "name": "accountInfo",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "callFunction",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"number\",\"type\":\"uint256\"}],\"internalType\":\"struct Account.Info\",\"name\":\"accountInfo\",\"type\":\"tuple\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"callFunction\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"dYdX Interface that Callees for Solo must implement in order to ingest data.\",\"kind\":\"dev\",\"methods\":{\"callFunction(address,(address,uint256),bytes)\":{\"params\":{\"accountInfo\":\"The account from which the data is being sent\",\"data\":\"Arbitrary data given by the sender\",\"sender\":\"The msg.sender to Solo\"}}},\"title\":\"ICallee\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"callFunction(address,(address,uint256),bytes)\":{\"notice\":\"Allows users to send this contract arbitrary data.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/src/contracts/dydx-flashloans/interfaces/ICallee.sol\":\"ICallee\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/contracts/dydx-flashloans/interfaces/ICallee.sol\":{\"keccak256\":\"0x84cff9eb3da6c08c43140a45413b9c8d32bc415a69bccaf86f1894b81d147718\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://d0e48e1183703e219d5e876889cbca6da41659da13874712bdd7554b02b37b4f\",\"dweb:/ipfs/QmVZgCfMYdAVJ7dcMWLrswY45aSYBXSxSDtUdRPBy9EmDX\"]},\"project:/src/contracts/dydx-flashloans/interfaces/ISoloMargin.sol\":{\"keccak256\":\"0x9a58a2c9b32ac9915d5e4af75740a9f04a6fec13a48be09cd65fb183696a82b8\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://2797730bbb62a12aec525363bf340b033308c9ca5b98d8e9f3501a6c4f736d2b\",\"dweb:/ipfs/Qmb71xsXPmW5NBTUKEMKtrDpZxzzYiNxtpv7TYPtSMRFBV\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: GPL-3.0-or-later\r\npragma solidity ^0.8;\r\npragma experimental ABIEncoderV2;\r\n\r\nimport {Account} from \"./ISoloMargin.sol\";\r\n\r\n/**\r\n * @title ICallee\r\n * @author dYdX\r\n *\r\n * Interface that Callees for Solo must implement in order to ingest data.\r\n */\r\ninterface ICallee {\r\n    // ============ Public Functions ============\r\n\r\n    /**\r\n     * Allows users to send this contract arbitrary data.\r\n     *\r\n     * @param  sender       The msg.sender to Solo\r\n     * @param  accountInfo  The account from which the data is being sent\r\n     * @param  data         Arbitrary data given by the sender\r\n     */\r\n    function callFunction(\r\n        address sender,\r\n        Account.Info calldata accountInfo,\r\n        bytes calldata data\r\n    ) external;\r\n}\r\n",
+  "sourcePath": "/mnt/c/pr0/projets/Trading Bots/FlashLoans/DyDxFlashLoans/src/contracts/dydx-flashloans/interfaces/ICallee.sol",
+  "ast": {
+    "absolutePath": "project:/src/contracts/dydx-flashloans/interfaces/ICallee.sol",
+    "exportedSymbols": {
+      "Account": [
+        1368
+      ],
+      "ICallee": [
+        1346
+      ]
+    },
+    "id": 1347,
+    "license": "GPL-3.0-or-later",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1330,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "46:21:5"
+      },
+      {
+        "id": 1331,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "69:33:5"
+      },
+      {
+        "absolutePath": "project:/src/contracts/dydx-flashloans/interfaces/ISoloMargin.sol",
+        "file": "./ISoloMargin.sol",
+        "id": 1333,
+        "nodeType": "ImportDirective",
+        "scope": 1347,
+        "sourceUnit": 2056,
+        "src": "106:42:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 1332,
+              "name": "Account",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "src": "114:7:5",
+              "typeDescriptions": {}
+            }
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 1334,
+          "nodeType": "StructuredDocumentation",
+          "src": "152:124:5",
+          "text": " @title ICallee\n @author dYdX\n Interface that Callees for Solo must implement in order to ingest data."
+        },
+        "fullyImplemented": false,
+        "id": 1346,
+        "linearizedBaseContracts": [
+          1346
+        ],
+        "name": "ICallee",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 1335,
+              "nodeType": "StructuredDocumentation",
+              "src": "356:270:5",
+              "text": " Allows users to send this contract arbitrary data.\n @param  sender       The msg.sender to Solo\n @param  accountInfo  The account from which the data is being sent\n @param  data         Arbitrary data given by the sender"
+            },
+            "functionSelector": "8b418713",
+            "id": 1345,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "callFunction",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1343,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1337,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1345,
+                  "src": "664:14:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1336,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "664:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1340,
+                  "mutability": "mutable",
+                  "name": "accountInfo",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1345,
+                  "src": "689:33:5",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Info_$1358_calldata_ptr",
+                    "typeString": "struct Account.Info"
+                  },
+                  "typeName": {
+                    "id": 1339,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1338,
+                      "name": "Account.Info",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1358,
+                      "src": "689:12:5"
+                    },
+                    "referencedDeclaration": 1358,
+                    "src": "689:12:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Info_$1358_storage_ptr",
+                      "typeString": "struct Account.Info"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1342,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1345,
+                  "src": "733:19:5",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1341,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "733:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "653:106:5"
+            },
+            "returnParameters": {
+              "id": 1344,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "768:0:5"
+            },
+            "scope": 1346,
+            "src": "632:137:5",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1347,
+        "src": "278:494:5"
+      }
+    ],
+    "src": "46:728:5"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/src/contracts/dydx-flashloans/interfaces/ICallee.sol",
+    "exportedSymbols": {
+      "Account": [
+        1368
+      ],
+      "ICallee": [
+        1346
+      ]
+    },
+    "id": 1347,
+    "license": "GPL-3.0-or-later",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1330,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "46:21:5"
+      },
+      {
+        "id": 1331,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "69:33:5"
+      },
+      {
+        "absolutePath": "project:/src/contracts/dydx-flashloans/interfaces/ISoloMargin.sol",
+        "file": "./ISoloMargin.sol",
+        "id": 1333,
+        "nodeType": "ImportDirective",
+        "scope": 1347,
+        "sourceUnit": 2056,
+        "src": "106:42:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 1332,
+              "name": "Account",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "src": "114:7:5",
+              "typeDescriptions": {}
+            }
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 1334,
+          "nodeType": "StructuredDocumentation",
+          "src": "152:124:5",
+          "text": " @title ICallee\n @author dYdX\n Interface that Callees for Solo must implement in order to ingest data."
+        },
+        "fullyImplemented": false,
+        "id": 1346,
+        "linearizedBaseContracts": [
+          1346
+        ],
+        "name": "ICallee",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 1335,
+              "nodeType": "StructuredDocumentation",
+              "src": "356:270:5",
+              "text": " Allows users to send this contract arbitrary data.\n @param  sender       The msg.sender to Solo\n @param  accountInfo  The account from which the data is being sent\n @param  data         Arbitrary data given by the sender"
+            },
+            "functionSelector": "8b418713",
+            "id": 1345,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "callFunction",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1343,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1337,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1345,
+                  "src": "664:14:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1336,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "664:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1340,
+                  "mutability": "mutable",
+                  "name": "accountInfo",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1345,
+                  "src": "689:33:5",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Info_$1358_calldata_ptr",
+                    "typeString": "struct Account.Info"
+                  },
+                  "typeName": {
+                    "id": 1339,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1338,
+                      "name": "Account.Info",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1358,
+                      "src": "689:12:5"
+                    },
+                    "referencedDeclaration": 1358,
+                    "src": "689:12:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Info_$1358_storage_ptr",
+                      "typeString": "struct Account.Info"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1342,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1345,
+                  "src": "733:19:5",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1341,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "733:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "653:106:5"
+            },
+            "returnParameters": {
+              "id": 1344,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "768:0:5"
+            },
+            "scope": 1346,
+            "src": "632:137:5",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1347,
+        "src": "278:494:5"
+      }
+    ],
+    "src": "46:728:5"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.0+commit.c7dfd78e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.4",
+  "updatedAt": "2022-02-01T11:35:04.020Z",
+  "devdoc": {
+    "author": "dYdX Interface that Callees for Solo must implement in order to ingest data.",
+    "kind": "dev",
+    "methods": {
+      "callFunction(address,(address,uint256),bytes)": {
+        "params": {
+          "accountInfo": "The account from which the data is being sent",
+          "data": "Arbitrary data given by the sender",
+          "sender": "The msg.sender to Solo"
+        }
+      }
+    },
+    "title": "ICallee",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "callFunction(address,(address,uint256),bytes)": {
+        "notice": "Allows users to send this contract arbitrary data."
+      }
+    },
+    "version": 1
+  }
+}

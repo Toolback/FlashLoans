@@ -1,0 +1,22 @@
+{
+  "name": "dydxflashloans",
+  "version": "1.0.0",
+  "description": "Yield Farming on Compound boosted with dYdX flash loan",
+  "author": "julien.rnlt@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.4.2",
+    "@studydefi/money-legos": "^2.4.2",
+    "chai": "^4.3.6",
+    "chai-as-promised": "^7.1.1",
+    "chai-bignumber": "^3.0.0",
+    "core-js": "^3.20.3",
+    "regenerator": "^0.14.7",
+    "truffle-flattener": "^1.5.0",
+    "web3": "^1.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.12",
+    "@babel/register": "^7.16.9"
+  }
+}
